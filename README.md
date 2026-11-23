@@ -11,7 +11,10 @@ An entry for the make.fun competition
 
 The whole entry is one complete story in exactly six words:
 
-> He finally smiled at her funeral.
+> His flag came home; he didn't.
+
+A folded flag returns to the family, but the person it stands for never does.
+The war, the reason and the years between are left for the reader to fill in.
 
 `main.ts` writes that text to `/output/entry.txt`, the single path the grader
 reads. It is deterministic, has no dependencies, and reads neither the network

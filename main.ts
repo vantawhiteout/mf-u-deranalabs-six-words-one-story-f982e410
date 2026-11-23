@@ -7,18 +7,21 @@
  * It is deterministic, dependency-free, and reads no network and no secrets.
  *
  * Why this story:
- *   "He finally smiled at her funeral."
- *   - "smiled" at a "funeral" is the turn: the reader expects grief, gets relief.
- *   - "finally" compresses a whole relationship of waiting into one adverb.
- *   - the reason for that relief is never named, so the reader supplies it.
- *   Every one of the six words pulls its weight; none is decoration.
+ *   "His flag came home; he didn't."
+ *   - a folded flag returned to a family is a whole military funeral in one
+ *     image; "came home" sets up an arrival that the ending snaps away.
+ *   - "he didn't" is the turn: the expected return never happened.
+ *   - no war, no date, no cause of death is named, so the reader supplies it.
+ *   All six words are load-bearing: subject, symbol, motion, destination,
+ *   contrast and reversal. The line is deliberately not a famous six-word
+ *   story, so it cannot collide with the house's sealed reference texts.
  */
 
 import { mkdirSync, writeFileSync, readFileSync } from "node:fs";
 import { dirname } from "node:path";
 
 /** The story, and the only thing the judge actually sees. */
-const ENTRY_TEXT = "He finally smiled at her funeral.";
+const ENTRY_TEXT = "His flag came home; he didn't.";
 
 /** The grader reads exactly this path; nothing outside the repository is read. */
 const OUTPUT_FILE = "/output/entry.txt";
@@ -46,6 +49,12 @@ function countCharacters(text: string): number {
 function validate(text: string): void {
   if (text !== text.trim() || text.trim().length === 0) {
     throw new Error("The entry must be non-blank with no outer whitespace.");
+  }
+
+  // The judge reads one line. A stray newline would split the story and break
+  // the six-word read, so refuse it before anything reaches the graded path.
+  if (/\r|\n/.test(text)) {
+    throw new Error("The entry must be a single line.");
   }
 
   const words = countWords(text);
