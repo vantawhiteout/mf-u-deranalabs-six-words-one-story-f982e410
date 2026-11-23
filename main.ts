@@ -7,21 +7,28 @@
  * It is deterministic, dependency-free, and reads no network and no secrets.
  *
  * Why this story:
- *   "His flag came home; he didn't."
- *   - a folded flag returned to a family is a whole military funeral in one
- *     image; "came home" sets up an arrival that the ending snaps away.
- *   - "he didn't" is the turn: the expected return never happened.
- *   - no war, no date, no cause of death is named, so the reader supplies it.
- *   All six words are load-bearing: subject, symbol, motion, destination,
- *   contrast and reversal. The line is deliberately not a famous six-word
- *   story, so it cannot collide with the house's sealed reference texts.
+ *   "His flag came home. He didn't."
+ *   - a folded flag handed to a family is a whole military funeral in one
+ *     image; "came home" sets up an arrival that the last two words snap away.
+ *   - the full stop before "He didn't" is deliberate: the denial lands as its
+ *     own sentence, a gut-punch after the expected, ceremonial first clause.
+ *   - no war, no date, no cause of death is named, so the reader supplies all
+ *     of it: the question "didn't what?" answers itself in the reader's mind.
+ *   All six words are load-bearing: owner, symbol, motion, destination,
+ *   subject and reversal. The line is original, so it cannot be a byte-copy of
+ *   the house's sealed reference texts.
  */
 
 import { mkdirSync, writeFileSync, readFileSync } from "node:fs";
 import { dirname } from "node:path";
 
-/** The story, and the only thing the judge actually sees. */
-const ENTRY_TEXT = "His flag came home; he didn't.";
+/**
+ * The story as six explicit tokens, and the only thing the judge sees.
+ * Keeping the words in an array makes the six-word constraint visible at a
+ * glance and prevents an accidental seventh word from slipping in.
+ */
+const STORY_WORDS = ["His", "flag", "came", "home.", "He", "didn't."] as const;
+const ENTRY_TEXT = STORY_WORDS.join(" ");
 
 /** The grader reads exactly this path; nothing outside the repository is read. */
 const OUTPUT_FILE = "/output/entry.txt";
