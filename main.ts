@@ -14,10 +14,8 @@
 
 const ENTRY_TEXT = "He finally smiled at her funeral.";
 
-// The grader reads /output/entry.txt. The override exists only so the exact
-// same program can be exercised locally; in the sandbox it is never set.
-const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
-const OUTPUT_FILE = `${OUTPUT_DIR.replace(/\/+$/, "")}/entry.txt`;
+// The grader reads exactly this path; nothing outside the repository is read.
+const OUTPUT_FILE = "/output/entry.txt";
 
 /** Count words the way a reader would: runs of non-whitespace. */
 function countWords(text: string): number {
