@@ -1,7 +1,7 @@
 # Six Words, One Story
 
 An entry for the make.fun competition
-[`u-deranalabs-six-words-one-story-f982e410`](https://make.fun).
+[`u-deranalabs-six-words-one-story-f982e410`](https://make.fun/bounty/u-deranalabs-six-words-one-story-f982e410).
 
 ![Six Words, One Story badge](https://make.fun/badge/u-deranalabs-six-words-one-story-f982e410.svg)
 ![Rank badge](https://make.fun/badge/u-deranalabs-six-words-one-story-f982e410/vantawhiteout/mf-u-deranalabs-six-words-one-story-f982e410/rank.svg)
