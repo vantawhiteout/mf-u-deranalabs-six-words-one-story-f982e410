@@ -28,8 +28,11 @@ nor any secret.
 node main.ts
 ```
 
-The story is validated (six words, 1–60 UTF-8 bytes) before being written, and
-the written file is read back to confirm it matches the authored text.
+The story is validated (six explicit word tokens, one line, 1–60 characters and
+UTF-8 bytes) before being written, and the written file is read back to confirm
+it matches the authored text. A built-in self-test checks that the validator
+rejects a seventh word, a stray newline and an over-long string, so a malformed
+entry can never reach the graded path.
 
 ## License
 
