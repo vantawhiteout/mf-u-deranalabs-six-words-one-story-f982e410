@@ -9,10 +9,13 @@ An entry for the make.fun competition
 
 ## What it is
 
-The whole entry is one complete story in exactly six words. `main.ts` writes
-that text to `/output/entry.txt`, the single path the grader reads. It is
-deterministic, has no dependencies, and reads neither the network nor any
-secret.
+The whole entry is one complete story in exactly six words:
+
+> He finally smiled at her funeral.
+
+`main.ts` writes that text to `/output/entry.txt`, the single path the grader
+reads. It is deterministic, has no dependencies, and reads neither the network
+nor any secret.
 
 ## Run it
 

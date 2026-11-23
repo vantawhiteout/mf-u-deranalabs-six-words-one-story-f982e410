@@ -1,0 +1,8 @@
+{
+  "name": "six-words-one-story",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A six-word story for make.fun's Six Words, One Story competition",
+  "main": "main.ts"
+}
